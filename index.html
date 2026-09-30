@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sonali 💜 | A Special Birthday</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#07050d;
+    color:white;
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(145,70,255,.18), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(255,80,190,.12), transparent 30%);
+    pointer-events:none;
+    z-index:-2;
+}
+
+.stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    opacity:.6;
+    animation:twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.2;transform:scale(.7)}
+    to{opacity:1;transform:scale(1.4)}
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(15px);
+    background:rgba(7,5,13,.55);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    z-index:100;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:3px;
+    color:#d9b7ff;
+}
+
+nav a{
+    color:#ddd;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:13px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#d69aff;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 80px;
+    position:relative;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.small{
+    color:#c996ff;
+    letter-spacing:5px;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(60px,12vw,145px);
+    line-height:.9;
+    background:linear-gradient(120deg,#fff,#d4a5ff,#ffb7ed,#fff);
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:shine 4s linear infinite;
+    background-size:250%;
+}
+
+@keyframes shine{
+    to{background-position:250% center}
+}
+
+.hero p{
+    margin:30px auto;
+    max-width:600px;
+    color:#b9b3c5;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 30px;
+    border-radius:50px;
+    color:white;
+    text-decoration:none;
+    background:linear-gradient(90deg,#8d4de8,#d96edc);
+    box-shadow:0 0 30px rgba(170,80,255,.3);
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 45px rgba(210,100,255,.6);
+}
+
+/* COUNTDOWN */
+.countdown-section{
+    padding:100px 7%;
+    text-align:center;
+}
+
+.section-title{
+    font-family:'Playfair Display',serif;
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.section-subtitle{
+    color:#96909f;
+    margin-bottom:50px;
+}
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.time-box{
+    width:130px;
+    height:130px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    border:1px solid rgba(210,160,255,.25);
+    background:rgba(255,255,255,.035);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    box-shadow:inset 0 0 30px rgba(180,100,255,.04);
+}
+
+.time-box span{
+    font-size:40px;
+    font-weight:700;
+    color:#e2c2ff;
+}
+
+.time-box small{
+    color:#8e8799;
+    letter-spacing:2px;
+}
+
+/* SONALI SECTION */
+.about{
+    padding:110px 7%;
+}
+
+.about-container{
+    max-width:1050px;
+    margin:auto;
+    padding:60px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:35px;
+    background:linear-gradient(145deg,rgba(150,70,255,.08),rgba(255,255,255,.02));
+    box-shadow:0 30px 100px rgba(0,0,0,.3);
+}
+
+.about-label{
+    color:#c48bff;
+    letter-spacing:4px;
+    font-size:12px;
+}
+
+.about h2{
+    font-family:'Playfair Display',serif;
+    font-size:55px;
+    margin:15px 0 25px;
+}
+
+.about p{
+    color:#aaa3b4;
+    line-height:2;
+    max-width:750px;
+}
+
+/* CARDS */
+.memories{
+    padding:110px 7%;
+    text-align:center;
+}
+
+.card-grid{
+    max-width:1100px;
+    margin:55px auto 0;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    min-height:250px;
+    padding:30px 20px;
+    border-radius:25px;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.4s;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(210,140,255,.45);
+    box-shadow:0 20px 50px rgba(130,50,220,.15);
+}
+
+.card-icon{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#8f8998;
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* JUNGKOOK */
+.jk{
+    padding:110px 7%;
+    text-align:center;
+}
+
+.jk-box{
+    max-width:1000px;
+    margin:auto;
+    padding:80px 30px;
+    border-radius:35px;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at center,rgba(150,80,255,.18),transparent 55%),
+        rgba(255,255,255,.025);
+    border:1px solid rgba(200,150,255,.15);
+}
+
+.jk-symbol{
+    font-size:80px;
+    margin-bottom:20px;
+}
+
+.jk h2{
+    font-family:'Playfair Display',serif;
+    font-size:55px;
+}
+
+.jk p{
+    max-width:600px;
+    margin:20px auto;
+    color:#a49baa;
+    line-height:1.9;
+}
+
+/* LETTER */
+.letter{
+    padding:110px 7%;
+}
+
+.letter-box{
+    max-width:850px;
+    margin:auto;
+    padding:60px;
+    background:#0d0a15;
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 30px 80px rgba(0,0,0,.4);
+}
+
+.letter-box h2{
+    font-family:'Playfair Display',serif;
+    font-size:45px;
+    margin-bottom:30px;
+}
+
+.letter-box p{
+    color:#b0a9b8;
+    line-height:2;
+    margin-bottom:20px;
+}
+
+.signature{
+    color:#d39aff!important;
+    font-size:18px;
+    font-weight:600;
+}
+
+/* GIFT */
+.gift-section{
+    padding:110px 7%;
+    text-align:center;
+}
+
+.gift{
+    width:130px;
+    height:110px;
+    margin:50px auto 30px;
+    position:relative;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gift:hover{
+    transform:scale(1.08);
+}
+
+.gift-box{
+    position:absolute;
+    bottom:0;
+    width:130px;
+    height:85px;
+    border-radius:8px;
+    background:linear-gradient(135deg,#8d45c9,#cf65c7);
+}
+
+.gift-lid{
+    position:absolute;
+    top:5px;
+    width:140px;
+    height:25px;
+    left:-5px;
+    border-radius:7px;
+    background:linear-gradient(135deg,#b45be7,#ef87dc);
+}
+
+.ribbon{
+    position:absolute;
+    left:55px;
+    width:20px;
+    height:110px;
+    background:#f2c9ff;
+    opacity:.8;
+}
+
+.hidden-message{
+    display:none;
+    max-width:650px;
+    margin:25px auto;
+    color:#dcbaff;
+    line-height:1.8;
+    animation:fadeUp .7s;
+}
+
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(15px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+/* FOOTER */
+footer{
+    padding:60px 20px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.06);
+    color:#756e7e;
+}
+
+footer strong{
+    color:#c99aff;
+}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+
+    nav{
+        padding:18px 5%;
+    }
+
+    nav .links{
+        display:none;
+    }
+
+    .about-container,
+    .letter-box{
+        padding:35px 25px;
+    }
+
+    .about h2,
+    .jk h2{
+        font-size:40px;
+    }
+
+    .card-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .time-box{
+        width:105px;
+        height:105px;
+    }
+
+    .time-box span{
+        font-size:30px;
+    }
+}
+
+@media(max-width:500px){
+
+    .hero h1{
+        font-size:70px;
+    }
+
+    .card-grid{
+        grid-template-columns:1fr;
+    }
+
+    .countdown{
+        gap:10px;
+    }
+
+    .time-box{
+        width:75px;
+        height:85px;
+        border-radius:18px;
+    }
+
+    .time-box span{
+        font-size:25px;
+    }
+
+    .time-box small{
+        font-size:9px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<nav>
+    <div class="logo">SONALI ✦</div>
+
+    <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#memories">Memories</a>
+        <a href="#letter">Letter</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+
+        <div class="small">A SPECIAL DAY • 09 OCTOBER</div>
+
+        <h1>SONALI</h1>
+
+        <p>
+            Some people make ordinary days feel special.
+            This little corner of the internet is made
+            especially for one of those people.
+        </p>
+
+        <a href="#about" class="btn">Enter Her World ✦</a>
+
+    </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="countdown-section">
+
+    <h2 class="section-title">The Countdown</h2>
+
+    <p class="section-subtitle">
+        Counting every moment until Sonali's special day.
+    </p>
+
+    <div class="countdown">
+
+        <div class="time-box">
+            <span id="days">00</span>
+            <small>DAYS</small>
+        </div>
+
+        <div class="time-box">
+            <span id="hours">00</span>
+            <small>HOURS</small>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <small>MINUTES</small>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <small>SECONDS</small>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="about-container">
+
+        <div class="about-label">FOR SOMEONE SPECIAL</div>
+
+        <h2>Hey, Sonali.</h2>
+
+        <p>
+            This isn't just another birthday page.
+            It's a tiny digital reminder of how important
+            you are and how many good memories are still
+            waiting to be made.
+        </p>
+
+        <br>
+
+        <p>
+            Keep laughing, keep dreaming, keep being yourself.
+            The world is definitely more interesting with you in it.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- MEMORIES -->
+<section class="memories" id="memories">
+
+    <h2 class="section-title">Our Little World</h2>
+
+    <p class="section-subtitle">
+        Four little things that make the friendship special.
+    </p>
+
+    <div class="card-grid">
+
+        <div class="card">
+            <div class="card-icon">😂</div>
+            <h3>Our Chaos</h3>
+            <p>
+                The random conversations, stupid jokes
+                and moments that somehow become memories.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">💜</div>
+            <h3>Our Friendship</h3>
+            <p>
+                No perfect friendship needed.
+                Just real moments and someone who stays.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🐰</div>
+            <h3>Jungkook Moments</h3>
+            <p>
+                Because every ARMY has that one
+                favourite person who makes the playlist better.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">✨</div>
+            <h3>More To Come</h3>
+            <p>
+                This chapter is nowhere near finished.
+                There are still countless memories ahead.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- JUNGKOOK -->
+<section class="jk">
+
+    <div class="jk-box">
+
+        <div class="jk-symbol">🐰</div>
+
+        <h2>For The Jungkook Fan</h2>
+
+        <p>
+            A little purple corner dedicated to the
+            BTS energy that makes Sonali smile.
+            May there always be good music, good moments
+            and plenty of reasons to smile.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- LETTER -->
+<section class="letter" id="letter">
+
+    <div class="letter-box">
+
+        <h2>A Little Letter</h2>
+
+        <p>
+            Dear Sonali,
+        </p>
+
+        <p>
+            Happy Birthday! 🎂
+        </p>
+
+        <p>
+            I hope this new year of your life brings you
+            beautiful memories, genuine happiness and
+            countless reasons to smile.
+        </p>
+
+        <p>
+            Stay exactly the way you are — funny, special,
+            slightly crazy and impossible to replace.
+        </p>
+
+        <p>
+            Here's to more conversations, more laughter,
+            more random moments and a lot more memories.
+        </p>
+
+        <p class="signature">
+            Happy Birthday, Sonali. 💜
+        </p>
+
+    </div>
+
+</section>
+
+<!-- GIFT -->
+<section class="gift-section">
+
+    <h2 class="section-title">One Last Surprise</h2>
+
+    <p class="section-subtitle">
+        There might be something hidden here...
+    </p>
+
+    <div class="gift" onclick="openGift()">
+
+        <div class="gift-lid"></div>
+
+        <div class="gift-box"></div>
+
+        <div class="ribbon"></div>
+
+    </div>
+
+    <div class="hidden-message" id="secret">
+        ✨ You found it! ✨<br><br>
+        Sonali, your birthday isn't just a date.
+        It's another chapter of your story.
+        Make this one unforgettable. 💜
+    </div>
+
+</section>
+
+<footer>
+    Made specially for <strong>Sonali</strong> 💜
+    <br><br>
+    09 • 10 • 2026
+</footer>
+
+<script>
+
+/* STARS */
+const stars = document.getElementById("stars");
+
+for(let i=0;i<100;i++){
+
+    const star = document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left = Math.random()*100 + "%";
+    star.style.top = Math.random()*100 + "%";
+
+    star.style.animationDelay =
+        Math.random()*3 + "s";
+
+    stars.appendChild(star);
+}
+
+
+/* COUNTDOWN */
+function updateCountdown(){
+
+    const now = new Date();
+
+    let year = now.getFullYear();
+
+    let birthday = new Date(year, 9, 9, 0, 0, 0);
+
+    if(now > birthday){
+        birthday = new Date(year + 1, 9, 9, 0, 0, 0);
+    }
+
+    const difference = birthday - now;
+
+    const days =
+        Math.floor(difference / (1000*60*60*24));
+
+    const hours =
+        Math.floor(
+            (difference / (1000*60*60)) % 24
+        );
+
+    const minutes =
+        Math.floor(
+            (difference / (1000*60)) % 60
+        );
+
+    const seconds =
+        Math.floor(
+            (difference / 1000) % 60
+        );
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2,"0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2,"0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2,"0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2,"0");
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+
+/* GIFT */
+function openGift(){
+
+    const message =
+        document.getElementById("secret");
+
+    if(message.style.display === "block"){
+
+        message.style.display = "none";
+
+    }else{
+
+        message.style.display = "block";
+
+        for(let i=0;i<25;i++){
+
+            const heart =
+                document.createElement("div");
+
+            heart.innerHTML =
+                ["💜","✨","💫","💖"]
+                [Math.floor(Math.random()*4)];
+
+            heart.style.position = "fixed";
+            heart.style.left =
+                Math.random()*100 + "vw";
+
+            heart.style.top = "80vh";
+
+            heart.style.fontSize =
+                (15+Math.random()*20) + "px";
+
+            heart.style.pointerEvents = "none";
+            heart.style.zIndex = "999";
+
+            document.body.appendChild(heart);
+
+            heart.animate(
+                [
+                    {
+                        transform:"translateY(0)",
+                        opacity:1
+                    },
+                    {
+                        transform:
+                        `translateY(-${200+Math.random()*300}px)`,
+                        opacity:0
+                    }
+                ],
+                {
+                    duration:1800,
+                    easing:"ease-out"
+                }
+            );
+
+            setTimeout(()=>{
+                heart.remove();
+            },1800);
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>
