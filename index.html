@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Sonali 💜</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For Sonali 💜</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
@@ -16,56 +17,51 @@
 
 html,body{
     width:100%;
-    min-height:100%;
+    height:100%;
 }
 
 body{
-    background:#05030b;
+    background:#05030a;
     color:#fff;
     font-family:"DM Sans",sans-serif;
     overflow:hidden;
 }
 
-/* BACKGROUND */
+/* ================= BACKGROUND ================= */
 
-body::before{
-    content:"";
-    position:fixed;
-    inset:-30%;
-    background:
-        radial-gradient(circle at 20% 20%,rgba(142,70,255,.20),transparent 25%),
-        radial-gradient(circle at 80% 30%,rgba(255,105,210,.12),transparent 25%),
-        radial-gradient(circle at 50% 90%,rgba(90,50,255,.15),transparent 30%);
-    animation:bgMove 12s ease-in-out infinite alternate;
-    pointer-events:none;
-}
-
-body::after{
+body:before{
     content:"";
     position:fixed;
     inset:0;
-    pointer-events:none;
+    z-index:-3;
+    background:
+        radial-gradient(circle at 15% 20%,rgba(153,75,255,.20),transparent 28%),
+        radial-gradient(circle at 85% 15%,rgba(255,100,210,.13),transparent 25%),
+        radial-gradient(circle at 50% 100%,rgba(82,45,180,.18),transparent 35%);
+}
+
+body:after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-2;
     opacity:.035;
     background-image:radial-gradient(#fff 1px,transparent 1px);
-    background-size:6px 6px;
+    background-size:7px 7px;
+    pointer-events:none;
 }
 
-@keyframes bgMove{
-    from{transform:scale(1) rotate(0deg)}
-    to{transform:scale(1.12) rotate(3deg)}
-}
-
-/* LOADER */
+/* ================= LOADER ================= */
 
 .loader{
     position:fixed;
     inset:0;
-    background:#05030b;
-    z-index:9999;
+    background:#05030a;
+    z-index:99999;
     display:flex;
     align-items:center;
     justify-content:center;
-    transition:1s ease;
+    transition:1s;
 }
 
 .loader.hide{
@@ -73,21 +69,21 @@ body::after{
     visibility:hidden;
 }
 
-.loader-box{
+.loader-content{
     text-align:center;
 }
 
 .loader-small{
     font-size:9px;
     letter-spacing:7px;
-    color:#8f819d;
+    color:#84768e;
     margin-bottom:20px;
 }
 
 .loader-name{
     font-family:"Playfair Display",serif;
-    font-size:clamp(70px,14vw,150px);
-    background:linear-gradient(90deg,#fff,#b27aff,#f09be8,#fff);
+    font-size:clamp(70px,15vw,150px);
+    background:linear-gradient(90deg,#fff,#a76dff,#f19bdc,#fff);
     background-size:250%;
     -webkit-background-clip:text;
     color:transparent;
@@ -95,76 +91,75 @@ body::after{
 }
 
 .loader-line{
-    height:2px;
     width:0;
+    height:2px;
+    background:#a76dff;
     margin:25px auto;
-    background:#a970ff;
-    animation:load 2s forwards;
+    animation:loading 2s forwards;
 }
 
-@keyframes load{
-    to{width:240px}
+@keyframes loading{
+    to{width:230px}
 }
 
 @keyframes gradient{
     to{background-position:250%}
 }
 
-/* NAV */
+/* ================= NAV ================= */
 
 nav{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    height:76px;
+    height:72px;
     padding:0 6%;
     display:flex;
     align-items:center;
     justify-content:space-between;
     z-index:1000;
-    background:linear-gradient(rgba(5,3,11,.95),transparent);
+    background:linear-gradient(rgba(5,3,10,.95),transparent);
 }
 
 .logo{
-    font-size:18px;
     font-weight:700;
     letter-spacing:5px;
     cursor:pointer;
 }
 
 .logo span{
-    color:#b477ff;
+    color:#b277ff;
 }
 
-.nav-links{
-    display:flex;
-    gap:25px;
-}
-
-.nav-links button{
-    border:0;
-    background:none;
-    color:#81758c;
-    font-family:inherit;
-    font-size:9px;
-    letter-spacing:2px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.nav-links button:hover,
-.nav-links button.active{
-    color:#d09cff;
-}
-
-.date{
-    color:#71667b;
+.nav-count{
+    color:#75687e;
     font-size:9px;
     letter-spacing:3px;
 }
 
-/* PAGE SYSTEM */
+.menu{
+    display:flex;
+    gap:9px;
+}
+
+.menu button{
+    border:0;
+    background:transparent;
+    color:#756b7d;
+    font-size:8px;
+    letter-spacing:1.5px;
+    cursor:pointer;
+    padding:7px;
+    transition:.3s;
+}
+
+.menu button:hover,
+.menu button.active{
+    color:#c38cff;
+}
+
+/* ================= PAGE SYSTEM ================= */
 
 .pages{
     width:100%;
@@ -175,14 +170,14 @@ nav{
 .page{
     position:absolute;
     inset:0;
+    height:100vh;
     width:100%;
-    height:100%;
-    padding:100px 7% 50px;
+    padding:100px 8% 60px;
     overflow-y:auto;
     opacity:0;
     visibility:hidden;
     transform:translateX(45px) scale(.98);
-    transition:.7s ease;
+    transition:.65s ease;
 }
 
 .page.active{
@@ -192,471 +187,369 @@ nav{
 }
 
 .page::-webkit-scrollbar{
-    width:4px;
+    width:3px;
 }
 
 .page::-webkit-scrollbar-thumb{
-    background:#603b91;
-    border-radius:10px;
+    background:#65408d;
+    border-radius:20px;
 }
 
-/* COMMON */
+/* ================= COMMON ================= */
+
+.center{
+    min-height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
 
 .eyebrow{
-    color:#b477ff;
+    color:#b277ff;
     font-size:9px;
     letter-spacing:6px;
     margin-bottom:22px;
 }
 
-.heading{
+.title{
     font-family:"Playfair Display",serif;
-    font-size:clamp(55px,8vw,105px);
-    line-height:.9;
+    font-size:clamp(60px,9vw,125px);
+    line-height:.88;
     letter-spacing:-4px;
 }
 
-.heading span{
-    color:#b477ff;
+.title span{
+    color:#b277ff;
     font-style:italic;
 }
 
-.sub{
-    color:#90859b;
+.text{
+    max-width:600px;
+    color:#95899e;
     line-height:1.9;
-    max-width:570px;
     margin-top:28px;
 }
 
-.next{
-    margin-top:40px;
-    border:1px solid rgba(190,135,255,.4);
-    background:rgba(160,90,255,.08);
-    color:white;
-    padding:15px 24px;
+.btn{
+    margin-top:38px;
+    padding:15px 25px;
     border-radius:50px;
-    font-family:inherit;
+    border:1px solid rgba(190,135,255,.4);
+    background:rgba(160,90,255,.07);
+    color:white;
     font-size:9px;
     letter-spacing:3px;
     cursor:pointer;
-    transition:.4s;
+    transition:.35s;
 }
 
-.next:hover{
-    background:#9459df;
-    transform:translateY(-3px);
-    box-shadow:0 15px 50px rgba(150,80,255,.3);
+.btn:hover{
+    background:#955be0;
+    transform:translateY(-4px);
+    box-shadow:0 15px 45px rgba(145,75,255,.25);
 }
 
-/* HOME */
+/* ================= 01 HOME ================= */
 
-#home{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-}
-
-.home-glow{
-    position:absolute;
-    width:650px;
-    height:650px;
+.home-orb{
+    width:500px;
+    height:500px;
     border-radius:50%;
-    background:radial-gradient(circle,rgba(150,70,255,.18),transparent 65%);
-    animation:float 6s ease-in-out infinite;
+    position:absolute;
+    background:radial-gradient(circle,rgba(155,75,255,.17),transparent 65%);
+    animation:orb 7s ease-in-out infinite;
 }
 
-@keyframes float{
-    50%{
-        transform:translateY(-25px) scale(1.08);
-    }
+@keyframes orb{
+    50%{transform:scale(1.15) translateY(-20px)}
 }
 
-.home-content{
+.home-name{
     position:relative;
-    z-index:2;
-}
-
-.home-content h1{
     font-family:"Playfair Display",serif;
-    font-size:clamp(90px,18vw,220px);
-    line-height:.75;
+    font-size:clamp(90px,17vw,220px);
     letter-spacing:-12px;
-    background:linear-gradient(120deg,#fff,#b27aff,#f09be8,#fff);
+    line-height:.75;
+    background:linear-gradient(120deg,#fff,#ae70ff,#f09cdc,#fff);
     background-size:250%;
     -webkit-background-clip:text;
     color:transparent;
-    animation:gradient 6s linear infinite;
+    animation:gradient 5s linear infinite;
 }
 
-.home-content p{
-    color:#95899f;
-    line-height:1.8;
-    margin:38px auto;
-    max-width:520px;
+/* ================= 02 OPENING ================= */
+
+.opening-box{
+    max-width:750px;
+    padding:50px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:35px;
+    background:rgba(255,255,255,.025);
+    backdrop-filter:blur(15px);
 }
 
-.scroll-text{
-    position:absolute;
-    bottom:30px;
-    color:#5c5363;
-    font-size:8px;
-    letter-spacing:4px;
+.opening-box .big{
+    font-size:55px;
+    margin-bottom:25px;
 }
 
-/* FLOATING HEARTS */
+/* ================= 03 BIRTHDAY ================= */
 
-.heart{
-    position:fixed;
-    bottom:-30px;
-    font-size:18px;
-    pointer-events:none;
-    animation:rise linear forwards;
-    z-index:10;
-}
-
-@keyframes rise{
-    0%{
-        transform:translateY(0) scale(.5);
-        opacity:0;
-    }
-    15%{opacity:1}
-    100%{
-        transform:translateY(-110vh) rotate(360deg) scale(1.2);
-        opacity:0;
-    }
-}
-
-/* BIRTHDAY */
-
-#birthday{
-    text-align:center;
-}
-
-.birthday-content{
-    min-height:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-}
-
-.birthday-content h1{
+.date-big{
+    font-size:clamp(75px,13vw,170px);
     font-family:"Playfair Display",serif;
-    font-size:clamp(70px,10vw,140px);
-    line-height:.85;
+    line-height:.8;
+    background:linear-gradient(90deg,#fff,#bd86ff,#fff);
+    -webkit-background-clip:text;
+    color:transparent;
 }
 
-.birthday-content h1 span{
-    color:#b477ff;
-    font-style:italic;
-}
-
-.birthday-content>p{
-    max-width:650px;
-    color:#93879e;
-    line-height:1.9;
-    margin-top:28px;
-}
+/* ================= 04 COUNTDOWN ================= */
 
 .countdown{
     display:flex;
     gap:14px;
-    justify-content:center;
     flex-wrap:wrap;
+    justify-content:center;
     margin-top:45px;
 }
 
-.count{
-    width:120px;
-    height:120px;
-    border-radius:25px;
-    border:1px solid rgba(255,255,255,.09);
-    background:rgba(255,255,255,.035);
+.time{
+    width:125px;
+    height:125px;
+    border-radius:28px;
     display:flex;
     flex-direction:column;
-    align-items:center;
     justify-content:center;
-    transition:.4s;
-    backdrop-filter:blur(10px);
+    align-items:center;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.035);
+    transition:.35s;
 }
 
-.count:hover{
+.time:hover{
     transform:translateY(-8px);
     border-color:#a970ff;
-    box-shadow:0 20px 60px rgba(140,70,255,.2);
 }
 
-.count b{
+.time b{
     font-size:38px;
 }
 
-.count small{
-    margin-top:8px;
-    color:#716779;
+.time small{
+    color:#706579;
     font-size:8px;
     letter-spacing:3px;
+    margin-top:7px;
 }
 
-/* MEMORIES */
+/* ================= 05 LETTER ================= */
 
-.memory-title{
-    padding-top:35px;
+.letter{
+    max-width:720px;
+    padding:55px;
+    border-radius:35px;
+    border:1px solid rgba(190,130,255,.15);
+    background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(160,80,255,.025));
+    box-shadow:0 30px 100px rgba(80,30,140,.12);
 }
 
-.memory-title p{
-    color:#8e8399;
-    max-width:550px;
-    line-height:1.8;
-    margin-top:22px;
+.letter p{
+    color:#aaa0b1;
+    line-height:2;
+    margin-top:18px;
 }
 
-.memory-grid{
-    max-width:1100px;
-    margin:50px auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
-}
+/* ================= 06 MEMORIES ================= */
 
-.memory-card{
-    min-height:220px;
-    border-radius:28px;
-    padding:30px;
-    border:1px solid rgba(255,255,255,.08);
-    background:rgba(255,255,255,.025);
-    transition:.5s;
-    position:relative;
-    overflow:hidden;
-    backdrop-filter:blur(10px);
-}
-
-.memory-card::after{
-    content:"";
-    position:absolute;
-    width:180px;
-    height:180px;
-    border-radius:50%;
-    background:rgba(160,90,255,.12);
-    filter:blur(50px);
-    right:-80px;
-    bottom:-80px;
-}
-
-.memory-card:hover{
-    transform:translateY(-8px);
-    border-color:rgba(175,120,255,.4);
-}
-
-.memory-number{
-    color:#5f5668;
-    font-size:9px;
-    letter-spacing:3px;
-}
-
-.memory-icon{
-    font-size:40px;
-    margin:30px 0 15px;
-}
-
-.memory-card h2{
-    font-family:"Playfair Display",serif;
-    font-size:28px;
-}
-
-.memory-card p{
-    color:#7e7488;
-    font-size:13px;
-    line-height:1.7;
-    margin-top:10px;
-}
-
-.memory-card.big{
-    grid-column:span 2;
-}
-
-/* JUNGKOOK */
-
-#jungkook{
-    text-align:center;
-}
-
-.jk-content{
-    min-height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-}
-
-.jk-orb{
-    position:absolute;
-    width:650px;
-    height:650px;
-    border-radius:50%;
-    background:radial-gradient(circle,rgba(130,65,240,.18),transparent 65%);
-    pointer-events:none;
-}
-
-.jk-photo{
-    position:relative;
-    width:190px;
-    height:245px;
-    border-radius:100px;
-    overflow:hidden;
-    border:2px solid rgba(194,135,255,.65);
-    box-shadow:
-        0 0 35px rgba(170,100,255,.35),
-        0 0 100px rgba(120,60,255,.15);
-    margin-bottom:25px;
-    z-index:2;
-}
-
-.jk-photo img{
+.cards{
+    max-width:1000px;
     width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:45px;
 }
 
-.jk-content h1{
-    position:relative;
-    z-index:2;
+.card{
+    min-height:190px;
+    padding:28px;
+    text-align:left;
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,.07);
+    background:rgba(255,255,255,.025);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(180,120,255,.4);
+}
+
+.card-icon{
+    font-size:35px;
+    margin-bottom:25px;
+}
+
+.card h3{
     font-family:"Playfair Display",serif;
-    font-size:clamp(60px,9vw,115px);
-    line-height:.9;
+    font-size:24px;
 }
 
-.jk-content h1 span{
-    color:#b477ff;
-    font-style:italic;
+.card p{
+    color:#807589;
+    font-size:12px;
+    line-height:1.7;
+    margin-top:9px;
 }
 
-.jk-content p{
-    position:relative;
-    z-index:2;
-    max-width:560px;
-    color:#91859b;
-    line-height:1.9;
-    margin-top:25px;
+/* ================= 07 BTS ================= */
+
+.bts-symbol{
+    font-size:90px;
+    margin-bottom:25px;
+    filter:drop-shadow(0 0 35px rgba(170,90,255,.45));
 }
 
-.jk-pills{
+.purple{
     display:flex;
     gap:12px;
-    margin-top:30px;
     flex-wrap:wrap;
     justify-content:center;
-    position:relative;
-    z-index:2;
+    margin-top:35px;
 }
 
-.pill{
-    padding:11px 18px;
-    border:1px solid rgba(255,255,255,.09);
+.tag{
+    padding:12px 20px;
+    border:1px solid rgba(255,255,255,.08);
     border-radius:50px;
-    color:#95899e;
+    color:#978aa0;
     font-size:9px;
     letter-spacing:2px;
-    background:rgba(255,255,255,.025);
 }
 
-.credit{
-    position:relative;
-    z-index:2;
-    margin-top:14px;
-    font-size:8px;
-    color:#5d5365;
-}
+/* ================= 08 JUNGKOOK ================= */
 
-.credit a{
-    color:#8060a5;
-}
-
-/* SURPRISE */
-
-#surprise{
-    text-align:center;
-}
-
-.surprise-content{
-    min-height:100%;
+.jk-circle{
+    width:230px;
+    height:230px;
+    border-radius:50%;
     display:flex;
-    flex-direction:column;
     align-items:center;
     justify-content:center;
+    font-size:105px;
+    background:
+        radial-gradient(circle at 40% 30%,#d4b1ff,transparent 10%),
+        radial-gradient(circle,#5e2b9d,#170a2b);
+    box-shadow:
+        0 0 50px rgba(155,75,255,.35),
+        inset 0 0 60px rgba(0,0,0,.5);
+    margin-bottom:35px;
+    animation:pulse 3s ease-in-out infinite;
 }
 
-.surprise-content h1{
-    font-family:"Playfair Display",serif;
-    font-size:clamp(65px,10vw,130px);
-    line-height:.9;
+@keyframes pulse{
+    50%{transform:scale(1.05)}
 }
 
-.surprise-content h1 span{
-    color:#b477ff;
-    font-style:italic;
+.jk-line{
+    color:#a18da9;
+    font-size:12px;
+    letter-spacing:2px;
+    margin-top:20px;
 }
 
-.surprise-content>p{
-    color:#8d8298;
-    max-width:560px;
-    line-height:1.9;
-    margin-top:25px;
+/* ================= 09 ARMY ================= */
+
+.army-box{
+    width:min(800px,100%);
+    padding:50px;
+    text-align:center;
+    border-radius:35px;
+    background:rgba(255,255,255,.025);
+    border:1px solid rgba(255,255,255,.08);
 }
+
+.army-heart{
+    font-size:75px;
+    animation:heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat{
+    50%{transform:scale(1.15)}
+}
+
+/* ================= 10 WISHES ================= */
+
+.wishes{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    max-width:850px;
+    gap:15px;
+    margin-top:35px;
+}
+
+.wish{
+    padding:25px;
+    border-radius:22px;
+    border:1px solid rgba(255,255,255,.07);
+    background:rgba(255,255,255,.025);
+    color:#a297aa;
+    line-height:1.7;
+}
+
+/* ================= 11 DREAMS ================= */
+
+.dream-cloud{
+    max-width:700px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:35px;
+}
+
+.dream{
+    padding:18px 25px;
+    border-radius:50px;
+    background:rgba(155,80,255,.07);
+    border:1px solid rgba(180,120,255,.2);
+    color:#ad9bb7;
+}
+
+/* ================= 12 SURPRISE ================= */
 
 .surprise-button{
-    width:150px;
-    height:150px;
+    width:155px;
+    height:155px;
     border-radius:50%;
-    margin-top:45px;
-    background:rgba(160,90,255,.08);
-    border:1px solid rgba(190,135,255,.5);
+    border:1px solid rgba(195,140,255,.5);
+    background:rgba(155,80,255,.08);
     color:white;
-    cursor:pointer;
-    font-family:inherit;
     font-size:10px;
     letter-spacing:3px;
+    cursor:pointer;
+    margin-top:40px;
     transition:.5s;
 }
 
 .surprise-button:hover{
     transform:scale(1.1);
-    background:#9459df;
-    box-shadow:0 0 90px rgba(155,80,255,.4);
+    background:#955be0;
+    box-shadow:0 0 100px rgba(155,80,255,.4);
 }
 
-.secret{
+.hidden-message{
     display:none;
-    max-width:680px;
+    max-width:650px;
     margin-top:40px;
 }
 
-.secret.show{
+.hidden-message.show{
     display:block;
     animation:appear 1s ease;
-}
-
-.secret-icon{
-    font-size:55px;
-}
-
-.secret h2{
-    font-family:"Playfair Display",serif;
-    font-size:45px;
-    margin:18px 0;
-}
-
-.secret p{
-    color:#8d8298;
-    line-height:1.9;
-    margin-bottom:15px;
-}
-
-.secret strong{
-    color:#bd8aff;
-    letter-spacing:4px;
 }
 
 @keyframes appear{
@@ -670,90 +563,99 @@ nav{
     }
 }
 
-/* MOBILE */
+/* ================= 13 FINAL ================= */
 
-@media(max-width:700px){
+.final-heart{
+    font-size:100px;
+    animation:floatHeart 3s ease-in-out infinite;
+}
 
-    nav{
-        height:68px;
+@keyframes floatHeart{
+    50%{transform:translateY(-15px) scale(1.08)}
+}
+
+.final-title{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(65px,10vw,140px);
+    line-height:.85;
+    margin-top:20px;
+}
+
+.final-title span{
+    color:#b277ff;
+    font-style:italic;
+}
+
+/* ================= FLOATING PARTICLES ================= */
+
+.particle{
+    position:fixed;
+    bottom:-30px;
+    pointer-events:none;
+    z-index:5000;
+    animation:rise linear forwards;
+}
+
+@keyframes rise{
+    0%{
+        transform:translateY(0) scale(.5) rotate(0);
+        opacity:0;
     }
+    15%{opacity:1}
+    100%{
+        transform:translateY(-110vh) scale(1.2) rotate(360deg);
+        opacity:0;
+    }
+}
 
-    .date{
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+
+    .menu{
         display:none;
     }
 
-    .nav-links{
-        gap:10px;
+    .page{
+        padding:90px 6% 45px;
     }
 
-    .nav-links button{
-        font-size:7px;
-        letter-spacing:1px;
-    }
-
-    .home-content h1{
-        font-size:72px;
+    .home-name{
+        font-size:70px;
         letter-spacing:-6px;
     }
 
-    .count{
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .wishes{
+        grid-template-columns:1fr;
+    }
+
+    .time{
         width:78px;
         height:90px;
     }
 
-    .count b{
+    .time b{
         font-size:25px;
     }
 
-    .memory-grid{
-        grid-template-columns:1fr;
+    .letter,
+    .opening-box,
+    .army-box{
+        padding:30px 22px;
     }
 
-    .memory-card.big{
-        grid-column:span 1;
-    }
-
-    .heading{
-        letter-spacing:-2px;
-    }
-
-    .page{
-        padding-left:5%;
-        padding-right:5%;
-    }
-
-    .jk-photo{
-        width:155px;
-        height:205px;
-    }
-}
-
-@media(max-width:430px){
-
-    .nav-links{
-        display:none;
-    }
-
-    .home-content h1{
-        font-size:62px;
-    }
-
-    .birthday-content h1{
-        font-size:58px;
-    }
-
-    .count{
-        width:70px;
-        height:80px;
-    }
-
-    .count b{
-        font-size:22px;
-    }
-
-    .jk-photo{
-        width:135px;
+    .jk-circle{
+        width:180px;
         height:180px;
+        font-size:80px;
+    }
+
+    .title{
+        letter-spacing:-2px;
     }
 }
 </style>
@@ -763,287 +665,528 @@ nav{
 
 <!-- LOADER -->
 <div class="loader" id="loader">
-    <div class="loader-box">
-        <div class="loader-small">A LITTLE SURPRISE FOR</div>
+    <div class="loader-content">
+        <div class="loader-small">A SPECIAL WORLD FOR</div>
         <div class="loader-name">SONALI</div>
         <div class="loader-line"></div>
     </div>
 </div>
 
+
 <!-- NAV -->
 <nav>
-    <div class="logo" onclick="go('home')">
+
+    <div class="logo" onclick="go(1)">
         S<span>✦</span>
     </div>
 
-    <div class="nav-links">
-        <button onclick="go('home')" data-page="home">HOME</button>
-        <button onclick="go('birthday')" data-page="birthday">BIRTHDAY</button>
-        <button onclick="go('memories')" data-page="memories">MEMORIES</button>
-        <button onclick="go('jungkook')" data-page="jungkook">JUNGKOOK</button>
-        <button onclick="go('surprise')" data-page="surprise">SURPRISE</button>
+    <div class="menu">
+        <button onclick="go(1)">01</button>
+        <button onclick="go(2)">02</button>
+        <button onclick="go(3)">03</button>
+        <button onclick="go(4)">04</button>
+        <button onclick="go(5)">05</button>
+        <button onclick="go(6)">06</button>
+        <button onclick="go(7)">07</button>
+        <button onclick="go(8)">08</button>
+        <button onclick="go(9)">09</button>
+        <button onclick="go(10)">10</button>
+        <button onclick="go(11)">11</button>
+        <button onclick="go(12)">12</button>
+        <button onclick="go(13)">13</button>
     </div>
 
-    <div class="date">09 / 10 / 2026</div>
+    <div class="nav-count" id="navCount">01 / 13</div>
+
 </nav>
+
 
 <div class="pages">
 
-<!-- HOME -->
-<section class="page active" id="home">
+<!-- ================= 01 ================= -->
 
-    <div class="home-glow"></div>
+<section class="page active" id="p1">
 
-    <div class="home-content">
+    <div class="center">
 
-        <div class="eyebrow">WELCOME TO SONALI'S PURPLE UNIVERSE</div>
+        <div class="home-orb"></div>
 
-        <h1>SONALI</h1>
+        <div class="eyebrow">A LITTLE UNIVERSE MADE FOR</div>
 
-        <p>
-            A tiny corner of the internet made with purple,
-            birthday magic, BTS energy and lots of love. 💜
+        <div class="home-name">SONALI</div>
+
+        <p class="text">
+            Some people deserve a simple birthday wish.
+            And then there is Sonali.
+            So this time, we made an entire little world. 💜
         </p>
 
-        <button class="next" onclick="go('birthday')">
-            ENTER HER WORLD →
-        </button>
+        <button class="btn" onclick="next()">START THE JOURNEY →</button>
 
-    </div>
-
-    <div class="scroll-text">
-        01 — BEGIN
     </div>
 
 </section>
 
 
-<!-- BIRTHDAY -->
-<section class="page" id="birthday">
+<!-- ================= 02 ================= -->
 
-    <div class="birthday-content">
+<section class="page" id="p2">
 
-        <div class="eyebrow">09 • OCTOBER • 2026</div>
+    <div class="center">
 
-        <h1>
-            Happy<br>
-            <span>Birthday.</span>
-        </h1>
+        <div class="eyebrow">CHAPTER 01</div>
 
-        <p>
-            Today isn't just another date.
-            Today is the day the world got Sonali —
-            and honestly, that's worth celebrating. 💜
+        <div class="opening-box">
+
+            <div class="big">Hey Sonali... 💜</div>
+
+            <p class="text">
+                Before anything else, just remember one thing:
+                today is your day.
+                No pressure. No worries.
+                Just smiles, music, memories and a little madness.
+            </p>
+
+            <button class="btn" onclick="next()">KEEP GOING →</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= 03 ================= -->
+
+<section class="page" id="p3">
+
+    <div class="center">
+
+        <div class="eyebrow">THE SPECIAL DATE</div>
+
+        <div class="date-big">09<br>OCT</div>
+
+        <p class="text">
+            A normal date on the calendar for everyone else.
+            But for us, it means one thing:
+            <b>SONALI'S BIRTHDAY.</b> 🎂
         </p>
+
+        <button class="btn" onclick="next()">NEXT →</button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= 04 ================= -->
+
+<section class="page" id="p4">
+
+    <div class="center">
+
+        <div class="eyebrow">THE WAIT IS ALMOST OVER</div>
+
+        <h1 class="title">
+            Birthday<br>
+            <span>Countdown.</span>
+        </h1>
 
         <div class="countdown">
 
-            <div class="count">
+            <div class="time">
                 <b id="days">00</b>
                 <small>DAYS</small>
             </div>
 
-            <div class="count">
+            <div class="time">
                 <b id="hours">00</b>
                 <small>HOURS</small>
             </div>
 
-            <div class="count">
+            <div class="time">
                 <b id="minutes">00</b>
                 <small>MINUTES</small>
             </div>
 
-            <div class="count">
+            <div class="time">
                 <b id="seconds">00</b>
                 <small>SECONDS</small>
             </div>
 
         </div>
 
-        <button class="next" onclick="go('memories')">
-            NEXT CHAPTER →
-        </button>
+        <button class="btn" onclick="next()">THE LETTER →</button>
 
     </div>
 
 </section>
 
 
-<!-- MEMORIES -->
-<section class="page" id="memories">
+<!-- ================= 05 ================= -->
 
-    <div class="memory-title">
+<section class="page" id="p5">
 
-        <div class="eyebrow">CHAPTER 02 • SONALI</div>
+    <div class="center">
 
-        <h1 class="heading">
-            Little moments.<br>
-            <span>Big memories.</span>
+        <div class="eyebrow">A SMALL LETTER</div>
+
+        <div class="letter">
+
+            <h1 class="title" style="font-size:55px">
+                Dear <span>Sonali,</span>
+            </h1>
+
+            <p>
+                I hope you always find reasons to smile,
+                even on the random days when nothing seems special.
+            </p>
+
+            <p>
+                I hope your dreams become bigger than your fears,
+                your good days become more frequent,
+                and your bad days become easier.
+            </p>
+
+            <p>
+                And most importantly,
+                I hope you never stop being the person
+                who makes ordinary moments feel memorable.
+            </p>
+
+            <p>
+                Happy Birthday, Sonali. 💜
+            </p>
+
+        </div>
+
+        <button class="btn" onclick="next()">MEMORIES →</button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= 06 ================= -->
+
+<section class="page" id="p6">
+
+    <div class="center">
+
+        <div class="eyebrow">CHAPTER 02 • MEMORIES</div>
+
+        <h1 class="title">
+            Little things.<br>
+            <span>Big feelings.</span>
         </h1>
 
-        <p>
-            Because the best memories are usually
-            the ones nobody planned.
-        </p>
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">😂</div>
+                <h3>The Chaos</h3>
+                <p>
+                    Random jokes, weird conversations
+                    and moments that somehow become memories.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💜</div>
+                <h3>The Friendship</h3>
+                <p>
+                    The kind where even silence
+                    never feels awkward.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">✨</div>
+                <h3>The Random Days</h3>
+                <p>
+                    Ordinary days that unexpectedly
+                    turn into stories.
+                </p>
+            </div>
+
+        </div>
+
+        <button class="btn" onclick="next()">BTS TIME →</button>
 
     </div>
-
-    <div class="memory-grid">
-
-        <div class="memory-card">
-            <div class="memory-number">01 / CHAOS</div>
-            <div class="memory-icon">😂</div>
-            <h2>Our Chaos</h2>
-            <p>
-                Random conversations, stupid jokes
-                and moments that make no sense
-                to anyone else.
-            </p>
-        </div>
-
-        <div class="memory-card">
-            <div class="memory-number">02 / FRIENDSHIP</div>
-            <div class="memory-icon">💜</div>
-            <h2>Our Friendship</h2>
-            <p>
-                The kind of friendship where even
-                the smallest moments become memories.
-            </p>
-        </div>
-
-        <div class="memory-card">
-            <div class="memory-number">03 / ARMY</div>
-            <div class="memory-icon">💜</div>
-            <h2>Purple Days</h2>
-            <p>
-                BTS songs, late-night fangirling,
-                edits, memes and pure ARMY energy.
-            </p>
-        </div>
-
-        <div class="memory-card">
-            <div class="memory-number">04 / DREAMS</div>
-            <div class="memory-icon">✨</div>
-            <h2>Dream Big</h2>
-            <p>
-                Keep chasing the things that make
-                your eyes light up.
-            </p>
-        </div>
-
-        <div class="memory-card big">
-            <div class="memory-number">05 / FUTURE</div>
-            <div class="memory-icon">♾️</div>
-            <h2>More To Come</h2>
-            <p>
-                This story isn't finished.
-                There are still countless memories
-                waiting to happen.
-            </p>
-        </div>
-
-    </div>
-
-    <button class="next" onclick="go('jungkook')">
-        NEXT → JUNGKOOK WORLD
-    </button>
 
 </section>
 
 
-<!-- JUNGKOOK -->
-<section class="page" id="jungkook">
+<!-- ================= 07 ================= -->
 
-    <div class="jk-content">
+<section class="page" id="p7">
 
-        <div class="jk-orb"></div>
+    <div class="center">
 
-        <div class="eyebrow">
-            CHAPTER 03 • FOR THE ARMY
-        </div>
+        <div class="eyebrow">CHAPTER 03 • PURPLE UNIVERSE</div>
 
-        <div class="jk-photo">
-            <img
-                src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Jung_Kook_of_BTS%2C_February_12%2C_2026_%283%29.png"
-                alt="Jung Kook of BTS"
-            >
-        </div>
+        <div class="bts-symbol">💜</div>
 
-        <h1>
-            For the<br>
-            <span>Jungkook fan.</span>
+        <h1 class="title">
+            Borahae,<br>
+            <span>Sonali.</span>
         </h1>
 
-        <p>
-            Because obviously Sonali's birthday
-            needed a little purple universe,
-            some BTS energy and a Jungkook moment. 🐰💜
+        <p class="text">
+            Because a birthday website for a BTS fan
+            simply cannot be complete without
+            a little purple universe.
         </p>
 
-        <div class="jk-pills">
-            <div class="pill">💜 PURPLE ENERGY</div>
-            <div class="pill">🎧 MUSIC ON</div>
-            <div class="pill">🐰 JUNGKOOK MODE</div>
-            <div class="pill">💫 ARMY FOREVER</div>
+        <div class="purple">
+            <div class="tag">💜 PURPLE ENERGY</div>
+            <div class="tag">🎧 MUSIC ON</div>
+            <div class="tag">✨ ARMY MODE</div>
+            <div class="tag">🌙 PURPLE NIGHT</div>
         </div>
 
-        <div class="credit">
-            Photo: TV10 via Wikimedia Commons ·
-            <a href="https://creativecommons.org/licenses/by/4.0/"
-               target="_blank">CC BY 4.0</a>
-        </div>
-
-        <button class="next" onclick="go('surprise')">
-            ONE LAST THING →
-        </button>
+        <button class="btn" onclick="next()">JUNGKOOK CORNER →</button>
 
     </div>
 
 </section>
 
 
-<!-- SURPRISE -->
-<section class="page" id="surprise">
+<!-- ================= 08 ================= -->
 
-    <div class="surprise-content">
+<section class="page" id="p8">
+
+    <div class="center">
+
+        <div class="jk-circle">🐰</div>
+
+        <div class="eyebrow">THE JUNGKOOK CORNER</div>
+
+        <h1 class="title">
+            JK<br>
+            <span>Energy.</span>
+        </h1>
+
+        <p class="text">
+            No photo needed.
+            Just pure bunny energy,
+            purple lights and a little fangirl magic. 🐰💜
+        </p>
+
+        <div class="jk-line">
+            MUSIC • DREAMS • PURPLE • ARMY
+        </div>
+
+        <button class="btn" onclick="next()">ARMY PAGE →</button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= 09 ================= -->
+
+<section class="page" id="p9">
+
+    <div class="center">
+
+        <div class="army-box">
+
+            <div class="army-heart">💜</div>
+
+            <div class="eyebrow">CHAPTER 04</div>
+
+            <h1 class="title" style="font-size:70px">
+                ARMY<br>
+                <span>Forever.</span>
+            </h1>
+
+            <p class="text" style="margin-left:auto;margin-right:auto">
+                May your playlist always have the right song,
+                your headphones always have enough battery,
+                and your purple universe always have
+                something new to smile about.
+            </p>
+
+        </div>
+
+        <button class="btn" onclick="next()">BIRTHDAY WISHES →</button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= 10 ================= -->
+
+<section class="page" id="p10">
+
+    <div class="center">
+
+        <div class="eyebrow">A FEW WISHES FOR YOU</div>
+
+        <h1 class="title">
+            Things I<br>
+            <span>wish for you.</span>
+        </h1>
+
+        <div class="wishes">
+
+            <div class="wish">
+                🌸 More peaceful days.
+            </div>
+
+            <div class="wish">
+                ✨ More reasons to smile.
+            </div>
+
+            <div class="wish">
+                🌙 More nights full of good memories.
+            </div>
+
+            <div class="wish">
+                💜 More people who genuinely care.
+            </div>
+
+            <div class="wish">
+                🎧 More songs that become memories.
+            </div>
+
+            <div class="wish">
+                🌟 More dreams coming true.
+            </div>
+
+        </div>
+
+        <button class="btn" onclick="next()">DREAMS →</button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= 11 ================= -->
+
+<section class="page" id="p11">
+
+    <div class="center">
+
+        <div class="eyebrow">CHAPTER 05 • THE FUTURE</div>
+
+        <h1 class="title">
+            Keep<br>
+            <span>dreaming.</span>
+        </h1>
+
+        <p class="text">
+            There are so many chapters of your life
+            that you haven't reached yet.
+            So many places, people, songs,
+            laughs and memories waiting for you.
+        </p>
+
+        <div class="dream-cloud">
+
+            <div class="dream">🌎 Adventures</div>
+            <div class="dream">🎓 Dreams</div>
+            <div class="dream">💜 Happiness</div>
+            <div class="dream">🎧 Music</div>
+            <div class="dream">✨ Success</div>
+            <div class="dream">🌙 Peace</div>
+            <div class="dream">🫶 Friendship</div>
+            <div class="dream">🌟 Memories</div>
+
+        </div>
+
+        <button class="btn" onclick="next()">ONE LAST SURPRISE →</button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= 12 ================= -->
+
+<section class="page" id="p12">
+
+    <div class="center">
 
         <div class="eyebrow">FINAL CHAPTER</div>
 
-        <h1>
+        <h1 class="title">
             One last<br>
             <span>surprise.</span>
         </h1>
 
-        <p>
+        <p class="text">
             You made it all the way here.
-            So there's one final message waiting for you. 💜
+            So now there is one tiny secret waiting.
         </p>
 
-        <button class="surprise-button" onclick="openSurprise()">
+        <button class="surprise-button" onclick="surprise()">
             OPEN ✦
         </button>
 
-        <div class="secret" id="secret">
+        <div class="hidden-message" id="secret">
 
-            <div class="secret-icon">💜</div>
+            <div style="font-size:65px">💜✨</div>
 
-            <h2>Happy Birthday, Sonali.</h2>
+            <h2 style="
+                font-family:'Playfair Display',serif;
+                font-size:45px;
+                margin:20px 0;
+            ">
+                Happy Birthday, Sonali!
+            </h2>
 
-            <p>
-                I hope this year brings you happiness
-                you didn't expect, memories you didn't plan,
-                and moments you'll never forget.
+            <p class="text" style="margin:auto">
+                May this new year of your life
+                be softer, brighter, happier
+                and full of moments you never want to forget.
             </p>
-
-            <p>
-                Keep laughing.<br>
-                Keep dreaming.<br>
-                Keep being you. ✨
-            </p>
-
-            <strong>09 • 10 • 2026</strong>
 
         </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= 13 ================= -->
+
+<section class="page" id="p13">
+
+    <div class="center">
+
+        <div class="final-heart">💜</div>
+
+        <div class="eyebrow">THE END • OR MAYBE THE BEGINNING</div>
+
+        <h1 class="final-title">
+            Happy Birthday,<br>
+            <span>Sonali.</span>
+        </h1>
+
+        <p class="text">
+            Keep laughing.<br>
+            Keep dreaming.<br>
+            Keep listening to your favorite songs.<br>
+            Keep being you.
+        </p>
+
+        <p style="
+            margin-top:35px;
+            color:#6f6478;
+            font-size:9px;
+            letter-spacing:4px;
+        ">
+            09 • 10 • 2026
+        </p>
+
+        <button class="btn" onclick="go(1)">
+            ↻ START AGAIN
+        </button>
 
     </div>
 
@@ -1054,43 +1197,62 @@ nav{
 
 <script>
 
-/* LOADER */
+/* ================= LOADER ================= */
 
 window.addEventListener("load",()=>{
+
     setTimeout(()=>{
-        document.getElementById("loader").classList.add("hide");
+        document
+            .getElementById("loader")
+            .classList.add("hide");
     },2200);
+
 });
 
 
-/* PAGE NAVIGATION */
+/* ================= PAGE NAVIGATION ================= */
+
+let current=1;
 
 function go(page){
 
-    document.querySelectorAll(".page").forEach(p=>{
-        p.classList.remove("active");
-    });
+    if(page<1) page=1;
+    if(page>13) page=13;
 
-    const target=document.getElementById(page);
+    current=page;
 
-    if(target){
-        target.classList.add("active");
-        target.scrollTop=0;
+    document
+        .querySelectorAll(".page")
+        .forEach(p=>p.classList.remove("active"));
+
+    document
+        .getElementById("p"+page)
+        .classList.add("active");
+
+    document
+        .querySelectorAll(".menu button")
+        .forEach((b,i)=>{
+            b.classList.toggle("active",i+1===page);
+        });
+
+    document.getElementById("navCount").textContent=
+        String(page).padStart(2,"0")+" / 13";
+
+    createParticles(5);
+}
+
+function next(){
+
+    if(current<13){
+        go(current+1);
     }
 
-    document.querySelectorAll(".nav-links button").forEach(btn=>{
-        btn.classList.remove("active");
-
-        if(btn.dataset.page===page){
-            btn.classList.add("active");
-        }
-    });
 }
 
 
-/* COUNTDOWN */
+/* ================= COUNTDOWN ================= */
 
-function updateCountdown(){
+function countdown(){
 
     const now=new Date();
 
@@ -1113,6 +1275,7 @@ function updateCountdown(){
             0,
             0
         );
+
     }
 
     const diff=birthday-now;
@@ -1135,83 +1298,87 @@ function updateCountdown(){
         String(seconds).padStart(2,"0");
 }
 
-updateCountdown();
-setInterval(updateCountdown,1000);
+countdown();
+setInterval(countdown,1000);
 
 
-/* SURPRISE */
+/* ================= SURPRISE ================= */
 
-function openSurprise(){
+function surprise(){
 
     const secret=document.getElementById("secret");
 
     secret.classList.toggle("show");
 
     if(secret.classList.contains("show")){
-
-        for(let i=0;i<55;i++){
-
-            const particle=document.createElement("div");
-
-            particle.textContent=
-                ["💜","✦","✧","✨","💫"]
-                [Math.floor(Math.random()*5)];
-
-            particle.style.position="fixed";
-            particle.style.left="50%";
-            particle.style.top="55%";
-            particle.style.zIndex="9999";
-            particle.style.pointerEvents="none";
-            particle.style.fontSize=
-                (12+Math.random()*18)+"px";
-
-            document.body.appendChild(particle);
-
-            const x=(Math.random()-.5)*800;
-            const y=(Math.random()-.5)*600;
-
-            particle.animate(
-                [
-                    {
-                        transform:"translate(-50%,-50%)",
-                        opacity:1
-                    },
-                    {
-                        transform:`translate(${x}px,${y}px)`,
-                        opacity:0
-                    }
-                ],
-                {
-                    duration:1200+Math.random()*1000,
-                    easing:"cubic-bezier(.2,.8,.3,1)"
-                }
-            );
-
-            setTimeout(()=>particle.remove(),2300);
-        }
+        createParticles(45);
     }
+
 }
 
 
-/* FLOATING PURPLE HEARTS */
+/* ================= PARTICLES ================= */
+
+function createParticles(amount){
+
+    const icons=[
+        "💜",
+        "✨",
+        "💫",
+        "♡",
+        "✦",
+        "🌸"
+    ];
+
+    for(let i=0;i<amount;i++){
+
+        const p=document.createElement("div");
+
+        p.className="particle";
+
+        p.textContent=
+            icons[Math.floor(Math.random()*icons.length)];
+
+        p.style.left=
+            Math.random()*100+"vw";
+
+        p.style.fontSize=
+            (12+Math.random()*18)+"px";
+
+        p.style.animationDuration=
+            (4+Math.random()*5)+"s";
+
+        document.body.appendChild(p);
+
+        setTimeout(()=>{
+            p.remove();
+        },9000);
+
+    }
+
+}
+
+
+/* ================= AUTO PARTICLES ================= */
 
 setInterval(()=>{
+    createParticles(1);
+},1000);
 
-    const heart=document.createElement("div");
 
-    heart.className="heart";
-    heart.textContent=
-        ["💜","✨","💫","♡"][Math.floor(Math.random()*4)];
+/* ================= KEYBOARD ================= */
 
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.animationDuration=
-        (5+Math.random()*5)+"s";
+document.addEventListener("keydown",(e)=>{
 
-    document.body.appendChild(heart);
+    if(e.key==="ArrowRight" && current<13){
+        next();
+    }
 
-    setTimeout(()=>heart.remove(),10000);
+    if(e.key==="ArrowLeft" && current>1){
+        go(current-1);
+    }
 
-},900);
+});
 
 </script>
 
