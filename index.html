@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Sonali — 09.10.2026</title>
+<title>Happy Birthday Sonali 💜</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
@@ -16,29 +16,27 @@
 
 html,body{
     width:100%;
-    height:100%;
+    min-height:100%;
 }
 
 body{
-    background:#050507;
+    background:#05030b;
     color:#fff;
     font-family:"DM Sans",sans-serif;
     overflow:hidden;
 }
 
-/* ================= BACKGROUND ================= */
+/* BACKGROUND */
 
 body::before{
     content:"";
     position:fixed;
-    width:700px;
-    height:700px;
-    border-radius:50%;
-    background:radial-gradient(circle,
-        rgba(153,85,255,.13),
-        transparent 65%);
-    top:-300px;
-    right:-200px;
+    inset:-30%;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(142,70,255,.20),transparent 25%),
+        radial-gradient(circle at 80% 30%,rgba(255,105,210,.12),transparent 25%),
+        radial-gradient(circle at 50% 90%,rgba(90,50,255,.15),transparent 30%);
+    animation:bgMove 12s ease-in-out infinite alternate;
     pointer-events:none;
 }
 
@@ -47,23 +45,27 @@ body::after{
     position:fixed;
     inset:0;
     pointer-events:none;
-    opacity:.025;
-    background-image:
-    radial-gradient(#fff 1px,transparent 1px);
-    background-size:5px 5px;
+    opacity:.035;
+    background-image:radial-gradient(#fff 1px,transparent 1px);
+    background-size:6px 6px;
 }
 
-/* ================= LOADER ================= */
+@keyframes bgMove{
+    from{transform:scale(1) rotate(0deg)}
+    to{transform:scale(1.12) rotate(3deg)}
+}
+
+/* LOADER */
 
 .loader{
     position:fixed;
     inset:0;
-    background:#050507;
+    background:#05030b;
     z-index:9999;
     display:flex;
     align-items:center;
     justify-content:center;
-    transition:1s;
+    transition:1s ease;
 }
 
 .loader.hide{
@@ -78,82 +80,72 @@ body::after{
 .loader-small{
     font-size:9px;
     letter-spacing:7px;
-    color:#77717d;
-    margin-bottom:25px;
+    color:#8f819d;
+    margin-bottom:20px;
 }
 
 .loader-name{
     font-family:"Playfair Display",serif;
-    font-size:90px;
-    letter-spacing:-5px;
-    background:linear-gradient(
-        90deg,
-        #fff,
-        #a66aff,
-        #ef94e5,
-        #fff
-    );
+    font-size:clamp(70px,14vw,150px);
+    background:linear-gradient(90deg,#fff,#b27aff,#f09be8,#fff);
     background-size:250%;
     -webkit-background-clip:text;
     color:transparent;
-    animation:gradient 4s linear infinite;
+    animation:gradient 3s linear infinite;
 }
 
 .loader-line{
-    height:1px;
+    height:2px;
     width:0;
-    margin:30px auto;
+    margin:25px auto;
     background:#a970ff;
     animation:load 2s forwards;
 }
 
 @keyframes load{
-    to{width:220px}
+    to{width:240px}
 }
 
 @keyframes gradient{
     to{background-position:250%}
 }
 
-/* ================= NAV ================= */
+/* NAV */
 
 nav{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    height:80px;
+    height:76px;
     padding:0 6%;
     display:flex;
     align-items:center;
     justify-content:space-between;
     z-index:1000;
-    background:linear-gradient(
-        rgba(5,5,7,.9),
-        transparent
-    );
+    background:linear-gradient(rgba(5,3,11,.95),transparent);
 }
 
 .logo{
-    font-size:16px;
+    font-size:18px;
     font-weight:700;
     letter-spacing:5px;
     cursor:pointer;
 }
 
 .logo span{
-    color:#aa6eff;
+    color:#b477ff;
 }
 
 .nav-links{
     display:flex;
-    gap:28px;
+    gap:25px;
 }
 
 .nav-links button{
     border:0;
     background:none;
-    color:#77717e;
+    color:#81758c;
     font-family:inherit;
     font-size:9px;
     letter-spacing:2px;
@@ -163,16 +155,16 @@ nav{
 
 .nav-links button:hover,
 .nav-links button.active{
-    color:#c292ff;
+    color:#d09cff;
 }
 
 .date{
-    color:#68626e;
+    color:#71667b;
     font-size:9px;
     letter-spacing:3px;
 }
 
-/* ================= PAGE SYSTEM ================= */
+/* PAGE SYSTEM */
 
 .pages{
     width:100%;
@@ -185,21 +177,18 @@ nav{
     inset:0;
     width:100%;
     height:100%;
-    padding:100px 7% 60px;
+    padding:100px 7% 50px;
     overflow-y:auto;
     opacity:0;
     visibility:hidden;
-    transform:translateX(40px) scale(.98);
-    transition:
-        opacity .7s ease,
-        transform .7s ease,
-        visibility .7s;
+    transform:translateX(45px) scale(.98);
+    transition:.7s ease;
 }
 
 .page.active{
     opacity:1;
     visibility:visible;
-    transform:translateX(0) scale(1);
+    transform:none;
 }
 
 .page::-webkit-scrollbar{
@@ -207,44 +196,44 @@ nav{
 }
 
 .page::-webkit-scrollbar-thumb{
-    background:#51357a;
+    background:#603b91;
     border-radius:10px;
 }
 
-/* ================= COMMON ================= */
+/* COMMON */
 
 .eyebrow{
-    color:#a970ff;
+    color:#b477ff;
     font-size:9px;
     letter-spacing:6px;
-    margin-bottom:25px;
+    margin-bottom:22px;
 }
 
 .heading{
     font-family:"Playfair Display",serif;
-    font-size:clamp(55px,8vw,110px);
+    font-size:clamp(55px,8vw,105px);
     line-height:.9;
     letter-spacing:-4px;
 }
 
 .heading span{
-    color:#a970ff;
+    color:#b477ff;
     font-style:italic;
 }
 
 .sub{
-    color:#85808d;
+    color:#90859b;
     line-height:1.9;
-    max-width:550px;
-    margin-top:30px;
+    max-width:570px;
+    margin-top:28px;
 }
 
 .next{
-    margin-top:45px;
-    border:1px solid rgba(180,130,255,.3);
-    background:rgba(160,90,255,.05);
+    margin-top:40px;
+    border:1px solid rgba(190,135,255,.4);
+    background:rgba(160,90,255,.08);
     color:white;
-    padding:16px 25px;
+    padding:15px 24px;
     border-radius:50px;
     font-family:inherit;
     font-size:9px;
@@ -254,12 +243,12 @@ nav{
 }
 
 .next:hover{
-    background:#9257dd;
-    border-color:#9257dd;
-    box-shadow:0 0 40px rgba(160,80,255,.25);
+    background:#9459df;
+    transform:translateY(-3px);
+    box-shadow:0 15px 50px rgba(150,80,255,.3);
 }
 
-/* ================= HOME ================= */
+/* HOME */
 
 #home{
     display:flex;
@@ -270,20 +259,16 @@ nav{
 
 .home-glow{
     position:absolute;
-    width:600px;
-    height:600px;
+    width:650px;
+    height:650px;
     border-radius:50%;
-    background:radial-gradient(
-        circle,
-        rgba(145,70,255,.16),
-        transparent 65%
-    );
-    animation:float 7s ease-in-out infinite;
+    background:radial-gradient(circle,rgba(150,70,255,.18),transparent 65%);
+    animation:float 6s ease-in-out infinite;
 }
 
 @keyframes float{
     50%{
-        transform:translateY(-25px) scale(1.05);
+        transform:translateY(-25px) scale(1.08);
     }
 }
 
@@ -294,39 +279,55 @@ nav{
 
 .home-content h1{
     font-family:"Playfair Display",serif;
-    font-size:clamp(90px,18vw,230px);
+    font-size:clamp(90px,18vw,220px);
     line-height:.75;
     letter-spacing:-12px;
-    background:
-        linear-gradient(
-            120deg,
-            #fff,
-            #b27aff,
-            #f09be8,
-            #fff
-        );
+    background:linear-gradient(120deg,#fff,#b27aff,#f09be8,#fff);
     background-size:250%;
     -webkit-background-clip:text;
     color:transparent;
-    animation:gradient 7s linear infinite;
+    animation:gradient 6s linear infinite;
 }
 
 .home-content p{
-    color:#85808e;
+    color:#95899f;
     line-height:1.8;
-    margin:40px auto;
-    max-width:500px;
+    margin:38px auto;
+    max-width:520px;
 }
 
 .scroll-text{
     position:absolute;
-    bottom:35px;
-    color:#55515c;
+    bottom:30px;
+    color:#5c5363;
     font-size:8px;
     letter-spacing:4px;
 }
 
-/* ================= BIRTHDAY ================= */
+/* FLOATING HEARTS */
+
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:18px;
+    pointer-events:none;
+    animation:rise linear forwards;
+    z-index:10;
+}
+
+@keyframes rise{
+    0%{
+        transform:translateY(0) scale(.5);
+        opacity:0;
+    }
+    15%{opacity:1}
+    100%{
+        transform:translateY(-110vh) rotate(360deg) scale(1.2);
+        opacity:0;
+    }
+}
+
+/* BIRTHDAY */
 
 #birthday{
     text-align:center;
@@ -347,15 +348,15 @@ nav{
 }
 
 .birthday-content h1 span{
-    color:#a970ff;
+    color:#b477ff;
     font-style:italic;
 }
 
 .birthday-content>p{
-    max-width:600px;
-    color:#85808e;
+    max-width:650px;
+    color:#93879e;
     line-height:1.9;
-    margin-top:30px;
+    margin-top:28px;
 }
 
 .countdown{
@@ -363,26 +364,27 @@ nav{
     gap:14px;
     justify-content:center;
     flex-wrap:wrap;
-    margin-top:55px;
+    margin-top:45px;
 }
 
 .count{
-    width:125px;
-    height:125px;
+    width:120px;
+    height:120px;
     border-radius:25px;
-    border:1px solid rgba(255,255,255,.08);
-    background:rgba(255,255,255,.025);
+    border:1px solid rgba(255,255,255,.09);
+    background:rgba(255,255,255,.035);
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     transition:.4s;
+    backdrop-filter:blur(10px);
 }
 
 .count:hover{
     transform:translateY(-8px);
-    border-color:#9d63e8;
-    box-shadow:0 20px 60px rgba(140,70,255,.12);
+    border-color:#a970ff;
+    box-shadow:0 20px 60px rgba(140,70,255,.2);
 }
 
 .count b{
@@ -391,41 +393,42 @@ nav{
 
 .count small{
     margin-top:8px;
-    color:#66616d;
+    color:#716779;
     font-size:8px;
     letter-spacing:3px;
 }
 
-/* ================= MEMORIES ================= */
+/* MEMORIES */
 
 .memory-title{
-    padding-top:50px;
+    padding-top:35px;
 }
 
 .memory-title p{
-    color:#85808e;
+    color:#8e8399;
     max-width:550px;
     line-height:1.8;
-    margin-top:25px;
+    margin-top:22px;
 }
 
 .memory-grid{
     max-width:1100px;
-    margin:60px auto;
+    margin:50px auto;
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:18px;
 }
 
 .memory-card{
-    min-height:240px;
+    min-height:220px;
     border-radius:28px;
-    padding:32px;
+    padding:30px;
     border:1px solid rgba(255,255,255,.08);
     background:rgba(255,255,255,.025);
     transition:.5s;
     position:relative;
     overflow:hidden;
+    backdrop-filter:blur(10px);
 }
 
 .memory-card::after{
@@ -434,7 +437,7 @@ nav{
     width:180px;
     height:180px;
     border-radius:50%;
-    background:rgba(160,90,255,.1);
+    background:rgba(160,90,255,.12);
     filter:blur(50px);
     right:-80px;
     bottom:-80px;
@@ -442,18 +445,18 @@ nav{
 
 .memory-card:hover{
     transform:translateY(-8px);
-    border-color:rgba(175,120,255,.35);
+    border-color:rgba(175,120,255,.4);
 }
 
 .memory-number{
-    color:#59545f;
+    color:#5f5668;
     font-size:9px;
     letter-spacing:3px;
 }
 
 .memory-icon{
-    font-size:42px;
-    margin:35px 0 18px;
+    font-size:40px;
+    margin:30px 0 15px;
 }
 
 .memory-card h2{
@@ -462,7 +465,7 @@ nav{
 }
 
 .memory-card p{
-    color:#77717d;
+    color:#7e7488;
     font-size:13px;
     line-height:1.7;
     margin-top:10px;
@@ -472,7 +475,7 @@ nav{
     grid-column:span 2;
 }
 
-/* ================= JUNGKOOK ================= */
+/* JUNGKOOK */
 
 #jungkook{
     text-align:center;
@@ -484,6 +487,7 @@ nav{
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    position:relative;
 }
 
 .jk-orb{
@@ -491,60 +495,86 @@ nav{
     width:650px;
     height:650px;
     border-radius:50%;
-    background:radial-gradient(
-        circle,
-        rgba(130,65,240,.18),
-        transparent 65%
-    );
+    background:radial-gradient(circle,rgba(130,65,240,.18),transparent 65%);
+    pointer-events:none;
 }
 
-.bunny{
+.jk-photo{
     position:relative;
-    font-size:90px;
-    filter:
-        drop-shadow(
-            0 0 40px
-            rgba(170,100,255,.4)
-        );
+    width:190px;
+    height:245px;
+    border-radius:100px;
+    overflow:hidden;
+    border:2px solid rgba(194,135,255,.65);
+    box-shadow:
+        0 0 35px rgba(170,100,255,.35),
+        0 0 100px rgba(120,60,255,.15);
     margin-bottom:25px;
+    z-index:2;
+}
+
+.jk-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
 }
 
 .jk-content h1{
+    position:relative;
+    z-index:2;
     font-family:"Playfair Display",serif;
     font-size:clamp(60px,9vw,115px);
     line-height:.9;
 }
 
 .jk-content h1 span{
-    color:#aa6eff;
+    color:#b477ff;
     font-style:italic;
 }
 
 .jk-content p{
-    max-width:550px;
-    color:#85808e;
+    position:relative;
+    z-index:2;
+    max-width:560px;
+    color:#91859b;
     line-height:1.9;
-    margin-top:30px;
+    margin-top:25px;
 }
 
 .jk-pills{
     display:flex;
     gap:12px;
-    margin-top:35px;
+    margin-top:30px;
     flex-wrap:wrap;
     justify-content:center;
+    position:relative;
+    z-index:2;
 }
 
 .pill{
     padding:11px 18px;
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.09);
     border-radius:50px;
-    color:#89828f;
+    color:#95899e;
     font-size:9px;
     letter-spacing:2px;
+    background:rgba(255,255,255,.025);
 }
 
-/* ================= SURPRISE ================= */
+.credit{
+    position:relative;
+    z-index:2;
+    margin-top:14px;
+    font-size:8px;
+    color:#5d5365;
+}
+
+.credit a{
+    color:#8060a5;
+}
+
+/* SURPRISE */
 
 #surprise{
     text-align:center;
@@ -565,28 +595,28 @@ nav{
 }
 
 .surprise-content h1 span{
-    color:#aa6eff;
+    color:#b477ff;
     font-style:italic;
 }
 
 .surprise-content>p{
-    color:#85808e;
-    max-width:550px;
+    color:#8d8298;
+    max-width:560px;
     line-height:1.9;
-    margin-top:30px;
+    margin-top:25px;
 }
 
 .surprise-button{
-    width:145px;
-    height:145px;
+    width:150px;
+    height:150px;
     border-radius:50%;
-    margin-top:50px;
-    background:rgba(160,90,255,.07);
-    border:1px solid rgba(180,130,255,.4);
+    margin-top:45px;
+    background:rgba(160,90,255,.08);
+    border:1px solid rgba(190,135,255,.5);
     color:white;
     cursor:pointer;
     font-family:inherit;
-    font-size:9px;
+    font-size:10px;
     letter-spacing:3px;
     transition:.5s;
 }
@@ -594,14 +624,13 @@ nav{
 .surprise-button:hover{
     transform:scale(1.1);
     background:#9459df;
-    box-shadow:
-        0 0 80px rgba(155,80,255,.3);
+    box-shadow:0 0 90px rgba(155,80,255,.4);
 }
 
 .secret{
     display:none;
-    max-width:650px;
-    margin-top:50px;
+    max-width:680px;
+    margin-top:40px;
 }
 
 .secret.show{
@@ -610,23 +639,23 @@ nav{
 }
 
 .secret-icon{
-    font-size:60px;
+    font-size:55px;
 }
 
 .secret h2{
     font-family:"Playfair Display",serif;
     font-size:45px;
-    margin:20px 0;
+    margin:18px 0;
 }
 
 .secret p{
-    color:#85808e;
+    color:#8d8298;
     line-height:1.9;
-    margin-bottom:18px;
+    margin-bottom:15px;
 }
 
 .secret strong{
-    color:#bb82ff;
+    color:#bd8aff;
     letter-spacing:4px;
 }
 
@@ -641,12 +670,12 @@ nav{
     }
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:700px){
 
     nav{
-        height:70px;
+        height:68px;
     }
 
     .date{
@@ -654,7 +683,7 @@ nav{
     }
 
     .nav-links{
-        gap:12px;
+        gap:10px;
     }
 
     .nav-links button{
@@ -663,22 +692,17 @@ nav{
     }
 
     .home-content h1{
-        font-size:75px;
+        font-size:72px;
         letter-spacing:-6px;
     }
 
     .count{
         width:78px;
         height:90px;
-        border-radius:18px;
     }
 
     .count b{
         font-size:25px;
-    }
-
-    .count small{
-        font-size:6px;
     }
 
     .memory-grid{
@@ -697,6 +721,11 @@ nav{
         padding-left:5%;
         padding-right:5%;
     }
+
+    .jk-photo{
+        width:155px;
+        height:205px;
+    }
 }
 
 @media(max-width:430px){
@@ -706,11 +735,11 @@ nav{
     }
 
     .home-content h1{
-        font-size:65px;
+        font-size:62px;
     }
 
     .birthday-content h1{
-        font-size:60px;
+        font-size:58px;
     }
 
     .count{
@@ -722,8 +751,9 @@ nav{
         font-size:22px;
     }
 
-    .bunny{
-        font-size:70px;
+    .jk-photo{
+        width:135px;
+        height:180px;
     }
 }
 </style>
@@ -734,80 +764,45 @@ nav{
 <!-- LOADER -->
 <div class="loader" id="loader">
     <div class="loader-box">
-        <div class="loader-small">
-            SOMETHING SPECIAL FOR
-        </div>
-
-        <div class="loader-name">
-            SONALI
-        </div>
-
+        <div class="loader-small">A LITTLE SURPRISE FOR</div>
+        <div class="loader-name">SONALI</div>
         <div class="loader-line"></div>
     </div>
 </div>
 
-
 <!-- NAV -->
 <nav>
-
     <div class="logo" onclick="go('home')">
         S<span>✦</span>
     </div>
 
     <div class="nav-links">
-
-        <button onclick="go('home')" data-page="home">
-            HOME
-        </button>
-
-        <button onclick="go('birthday')" data-page="birthday">
-            BIRTHDAY
-        </button>
-
-        <button onclick="go('memories')" data-page="memories">
-            MEMORIES
-        </button>
-
-        <button onclick="go('jungkook')" data-page="jungkook">
-            JUNGKOOK
-        </button>
-
-        <button onclick="go('surprise')" data-page="surprise">
-            SURPRISE
-        </button>
-
+        <button onclick="go('home')" data-page="home">HOME</button>
+        <button onclick="go('birthday')" data-page="birthday">BIRTHDAY</button>
+        <button onclick="go('memories')" data-page="memories">MEMORIES</button>
+        <button onclick="go('jungkook')" data-page="jungkook">JUNGKOOK</button>
+        <button onclick="go('surprise')" data-page="surprise">SURPRISE</button>
     </div>
 
-    <div class="date">
-        09 / 10 / 2026
-    </div>
-
+    <div class="date">09 / 10 / 2026</div>
 </nav>
-
 
 <div class="pages">
 
-
-<!-- ================= HOME ================= -->
-
+<!-- HOME -->
 <section class="page active" id="home">
 
     <div class="home-glow"></div>
 
     <div class="home-content">
 
-        <div class="eyebrow">
-            A LITTLE WORLD MADE FOR ONE PERSON
-        </div>
+        <div class="eyebrow">WELCOME TO SONALI'S PURPLE UNIVERSE</div>
 
-        <h1>
-            SONALI
-        </h1>
+        <h1>SONALI</h1>
 
         <p>
-            Welcome to a place where one name,
-            a few memories and a birthday
-            become something special.
+            A tiny corner of the internet made with purple,
+            birthday magic, BTS energy and lots of love. 💜
         </p>
 
         <button class="next" onclick="go('birthday')">
@@ -823,15 +818,12 @@ nav{
 </section>
 
 
-<!-- ================= BIRTHDAY ================= -->
-
+<!-- BIRTHDAY -->
 <section class="page" id="birthday">
 
     <div class="birthday-content">
 
-        <div class="eyebrow">
-            09 • OCTOBER • 2026
-        </div>
+        <div class="eyebrow">09 • OCTOBER • 2026</div>
 
         <h1>
             Happy<br>
@@ -840,9 +832,9 @@ nav{
 
         <p>
             Today isn't just another date.
-            Today is the day the world got Sonali.
+            Today is the day the world got Sonali —
+            and honestly, that's worth celebrating. 💜
         </p>
-
 
         <div class="countdown">
 
@@ -877,15 +869,12 @@ nav{
 </section>
 
 
-<!-- ================= MEMORIES ================= -->
-
+<!-- MEMORIES -->
 <section class="page" id="memories">
 
     <div class="memory-title">
 
-        <div class="eyebrow">
-            CHAPTER 02
-        </div>
+        <div class="eyebrow">CHAPTER 02 • SONALI</div>
 
         <h1 class="heading">
             Little moments.<br>
@@ -893,128 +882,67 @@ nav{
         </h1>
 
         <p>
-            The best memories are usually
+            Because the best memories are usually
             the ones nobody planned.
         </p>
 
     </div>
 
-
     <div class="memory-grid">
 
         <div class="memory-card">
-
-            <div class="memory-number">
-                01 / CHAOS
-            </div>
-
-            <div class="memory-icon">
-                😂
-            </div>
-
-            <h2>
-                Our Chaos
-            </h2>
-
+            <div class="memory-number">01 / CHAOS</div>
+            <div class="memory-icon">😂</div>
+            <h2>Our Chaos</h2>
             <p>
                 Random conversations, stupid jokes
                 and moments that make no sense
                 to anyone else.
             </p>
-
         </div>
 
-
         <div class="memory-card">
-
-            <div class="memory-number">
-                02 / FRIENDSHIP
-            </div>
-
-            <div class="memory-icon">
-                💜
-            </div>
-
-            <h2>
-                Our Friendship
-            </h2>
-
+            <div class="memory-number">02 / FRIENDSHIP</div>
+            <div class="memory-icon">💜</div>
+            <h2>Our Friendship</h2>
             <p>
                 The kind of friendship where even
                 the smallest moments become memories.
             </p>
-
         </div>
-
 
         <div class="memory-card">
-
-            <div class="memory-number">
-                03 / RANDOM
-            </div>
-
-            <div class="memory-icon">
-                ✨
-            </div>
-
-            <h2>
-                Random Days
-            </h2>
-
+            <div class="memory-number">03 / ARMY</div>
+            <div class="memory-icon">💜</div>
+            <h2>Purple Days</h2>
             <p>
-                Ordinary days that somehow
-                turned into stories worth remembering.
+                BTS songs, late-night fangirling,
+                edits, memes and pure ARMY energy.
             </p>
-
         </div>
-
 
         <div class="memory-card">
-
-            <div class="memory-number">
-                04 / LATE NIGHTS
-            </div>
-
-            <div class="memory-icon">
-                🌙
-            </div>
-
-            <h2>
-                Late Conversations
-            </h2>
-
+            <div class="memory-number">04 / DREAMS</div>
+            <div class="memory-icon">✨</div>
+            <h2>Dream Big</h2>
             <p>
-                Conversations that were supposed
-                to last five minutes.
+                Keep chasing the things that make
+                your eyes light up.
             </p>
-
         </div>
-
 
         <div class="memory-card big">
-
-            <div class="memory-number">
-                05 / FUTURE
-            </div>
-
-            <div class="memory-icon">
-                ♾️
-            </div>
-
-            <h2>
-                More To Come
-            </h2>
-
+            <div class="memory-number">05 / FUTURE</div>
+            <div class="memory-icon">♾️</div>
+            <h2>More To Come</h2>
             <p>
-                The story isn't finished.
+                This story isn't finished.
                 There are still countless memories
                 waiting to happen.
             </p>
-
         </div>
 
     </div>
-
 
     <button class="next" onclick="go('jungkook')">
         NEXT → JUNGKOOK WORLD
@@ -1023,8 +951,7 @@ nav{
 </section>
 
 
-<!-- ================= JUNGKOOK ================= -->
-
+<!-- JUNGKOOK -->
 <section class="page" id="jungkook">
 
     <div class="jk-content">
@@ -1035,8 +962,11 @@ nav{
             CHAPTER 03 • FOR THE ARMY
         </div>
 
-        <div class="bunny">
-            🐰
+        <div class="jk-photo">
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Jung_Kook_of_BTS%2C_February_12%2C_2026_%283%29.png"
+                alt="Jung Kook of BTS"
+            >
         </div>
 
         <h1>
@@ -1046,23 +976,21 @@ nav{
 
         <p>
             Because obviously Sonali's birthday
-            needed a little purple universe.
+            needed a little purple universe,
+            some BTS energy and a Jungkook moment. 🐰💜
         </p>
 
         <div class="jk-pills">
+            <div class="pill">💜 PURPLE ENERGY</div>
+            <div class="pill">🎧 MUSIC ON</div>
+            <div class="pill">🐰 JUNGKOOK MODE</div>
+            <div class="pill">💫 ARMY FOREVER</div>
+        </div>
 
-            <div class="pill">
-                💜 PURPLE ENERGY
-            </div>
-
-            <div class="pill">
-                🎧 MUSIC ON
-            </div>
-
-            <div class="pill">
-                🐰 JUNGKOOK MODE
-            </div>
-
+        <div class="credit">
+            Photo: TV10 via Wikimedia Commons ·
+            <a href="https://creativecommons.org/licenses/by/4.0/"
+               target="_blank">CC BY 4.0</a>
         </div>
 
         <button class="next" onclick="go('surprise')">
@@ -1074,15 +1002,12 @@ nav{
 </section>
 
 
-<!-- ================= SURPRISE ================= -->
-
+<!-- SURPRISE -->
 <section class="page" id="surprise">
 
     <div class="surprise-content">
 
-        <div class="eyebrow">
-            FINAL CHAPTER
-        </div>
+        <div class="eyebrow">FINAL CHAPTER</div>
 
         <h1>
             One last<br>
@@ -1091,26 +1016,18 @@ nav{
 
         <p>
             You made it all the way here.
-            So there's one final message waiting.
+            So there's one final message waiting for you. 💜
         </p>
 
-        <button
-            class="surprise-button"
-            onclick="openSurprise()"
-        >
+        <button class="surprise-button" onclick="openSurprise()">
             OPEN ✦
         </button>
 
-
         <div class="secret" id="secret">
 
-            <div class="secret-icon">
-                💜
-            </div>
+            <div class="secret-icon">💜</div>
 
-            <h2>
-                Happy Birthday, Sonali.
-            </h2>
+            <h2>Happy Birthday, Sonali.</h2>
 
             <p>
                 I hope this year brings you happiness
@@ -1121,12 +1038,10 @@ nav{
             <p>
                 Keep laughing.<br>
                 Keep dreaming.<br>
-                Keep being you.
+                Keep being you. ✨
             </p>
 
-            <strong>
-                09 • 10 • 2026
-            </strong>
+            <strong>09 • 10 • 2026</strong>
 
         </div>
 
@@ -1139,63 +1054,48 @@ nav{
 
 <script>
 
-/* ================= LOADER ================= */
+/* LOADER */
 
 window.addEventListener("load",()=>{
-
     setTimeout(()=>{
-
-        document
-        .getElementById("loader")
-        .classList.add("hide");
-
+        document.getElementById("loader").classList.add("hide");
     },2200);
-
 });
 
 
-/* ================= PAGE NAVIGATION ================= */
+/* PAGE NAVIGATION */
 
 function go(page){
 
-    document
-    .querySelectorAll(".page")
-    .forEach(p=>{
+    document.querySelectorAll(".page").forEach(p=>{
         p.classList.remove("active");
     });
 
-    const target =
-        document.getElementById(page);
+    const target=document.getElementById(page);
 
     if(target){
         target.classList.add("active");
         target.scrollTop=0;
     }
 
-
-    document
-    .querySelectorAll(".nav-links button")
-    .forEach(btn=>{
+    document.querySelectorAll(".nav-links button").forEach(btn=>{
         btn.classList.remove("active");
 
         if(btn.dataset.page===page){
             btn.classList.add("active");
         }
     });
-
 }
 
 
-/* ================= COUNTDOWN ================= */
+/* COUNTDOWN */
 
 function updateCountdown(){
 
     const now=new Date();
 
-    let year=now.getFullYear();
-
     let birthday=new Date(
-        year,
+        now.getFullYear(),
         9,
         9,
         0,
@@ -1203,33 +1103,24 @@ function updateCountdown(){
         0
     );
 
-    if(now>birthday){
+    if(now>=birthday){
 
         birthday=new Date(
-            year+1,
+            now.getFullYear()+1,
             9,
             9,
             0,
             0,
             0
         );
-
     }
 
     const diff=birthday-now;
 
-    const days=
-        Math.floor(diff/86400000);
-
-    const hours=
-        Math.floor(diff/3600000)%24;
-
-    const minutes=
-        Math.floor(diff/60000)%60;
-
-    const seconds=
-        Math.floor(diff/1000)%60;
-
+    const days=Math.floor(diff/86400000);
+    const hours=Math.floor(diff/3600000)%24;
+    const minutes=Math.floor(diff/60000)%60;
+    const seconds=Math.floor(diff/1000)%60;
 
     document.getElementById("days").textContent=
         String(days).padStart(2,"0");
@@ -1242,34 +1133,29 @@ function updateCountdown(){
 
     document.getElementById("seconds").textContent=
         String(seconds).padStart(2,"0");
-
 }
 
 updateCountdown();
-
 setInterval(updateCountdown,1000);
 
 
-/* ================= SURPRISE ================= */
+/* SURPRISE */
 
 function openSurprise(){
 
-    const secret=
-        document.getElementById("secret");
+    const secret=document.getElementById("secret");
 
     secret.classList.toggle("show");
 
-
     if(secret.classList.contains("show")){
 
-        for(let i=0;i<45;i++){
+        for(let i=0;i<55;i++){
 
-            const particle=
-                document.createElement("div");
+            const particle=document.createElement("div");
 
             particle.textContent=
-                ["💜","✦","✧","✨"]
-                [Math.floor(Math.random()*4)];
+                ["💜","✦","✧","✨","💫"]
+                [Math.floor(Math.random()*5)];
 
             particle.style.position="fixed";
             particle.style.left="50%";
@@ -1281,51 +1167,51 @@ function openSurprise(){
 
             document.body.appendChild(particle);
 
-            const x=
-                (Math.random()-.5)*700;
-
-            const y=
-                (Math.random()-.5)*500;
-
+            const x=(Math.random()-.5)*800;
+            const y=(Math.random()-.5)*600;
 
             particle.animate(
-
                 [
                     {
-                        transform:
-                        "translate(-50%,-50%)",
+                        transform:"translate(-50%,-50%)",
                         opacity:1
                     },
-
                     {
-                        transform:
-                        `translate(${x}px,${y}px)`,
+                        transform:`translate(${x}px,${y}px)`,
                         opacity:0
                     }
                 ],
-
                 {
-                    duration:
-                        1200+
-                        Math.random()*1000,
-
-                    easing:
-                        "cubic-bezier(.2,.8,.3,1)"
+                    duration:1200+Math.random()*1000,
+                    easing:"cubic-bezier(.2,.8,.3,1)"
                 }
-
             );
 
-
-            setTimeout(
-                ()=>particle.remove(),
-                2300
-            );
-
+            setTimeout(()=>particle.remove(),2300);
         }
-
     }
-
 }
+
+
+/* FLOATING PURPLE HEARTS */
+
+setInterval(()=>{
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+    heart.textContent=
+        ["💜","✨","💫","♡"][Math.floor(Math.random()*4)];
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=
+        (5+Math.random()*5)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),10000);
+
+},900);
 
 </script>
 
